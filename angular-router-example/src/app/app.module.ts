@@ -4,19 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './components/main/main.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { VillainsComponent } from './components/villains/villains.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MoviesComponent } from './components/movies/movies.component';
+import { ComicBooksComponent } from './components/comic-books/comic-books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    HeroesComponent,
-    VillainsComponent
+    MoviesComponent,
+    ComicBooksComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
