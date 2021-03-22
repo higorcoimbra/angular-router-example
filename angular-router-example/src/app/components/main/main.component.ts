@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Hero } from '../../models/marvel.model';
 import { MarvelService } from '../../services/marvel.service';
 
@@ -16,7 +17,7 @@ export class MainComponent implements OnInit {
     searchTerm: new FormControl('')
   });
 
-  constructor(private marvelService: MarvelService) { }
+  constructor(private marvelService: MarvelService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,11 @@ export class MainComponent implements OnInit {
     this.heroesList = this.marvelService.searchHero(searchTerm);
   }
 
-  redirectToMovies(heroName: string) {}
-  redirectToComicBooks(heroName: string) {}
+  redirectToMovies(heroName: string) {
+    this.router.navigate([`movies/${heroName}`]);
+  }
+  
+  redirectToComicBooks(heroName: string) {
+    this.router.navigate([`comicBooks/${heroName}`]);
+  }
 }
