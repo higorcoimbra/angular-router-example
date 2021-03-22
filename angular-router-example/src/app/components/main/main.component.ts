@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Hero } from '../../models/marvel.model';
+import { MarvelService } from '../../services/marvel.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  heroesList: Hero[];
+
+  form: FormGroup = new FormGroup({
+    searchTerm: new FormControl('')
+  });
+
+  constructor(private marvelService: MarvelService) { }
 
   ngOnInit(): void {
   }
 
+  searchHero(searchTerm: string): void {
+    this.heroesList = this.marvelService.searchHero(searchTerm);
+  }
+
+  redirectToMovies(heroName: string) {}
+  redirectToComicBooks(heroName: string) {}
 }

@@ -1,1 +1,14 @@
-<p>main works!</p>
+<div>
+    <form [formGroup]="form" (ngSubmit)="searchHero(form.value.searchTerm)">
+        <input formControlName="searchTerm" type="text" placeholder="Nome do Herói">
+        <button type="submit">Pesquisar</button>
+    </form>
+    <div *ngFor="let hero of heroesList">
+        <p>Nome: {{hero.name}}</p>
+        <p>Idade: {{hero.age}}</p>
+        <div>
+            <button (click)="redirectToMovies(hero.name)">Movies</button>
+            <button (click)="redirectToComicBooks(hero.name)">Comic Books</button>
+        </div>
+    </div>
+</div>
