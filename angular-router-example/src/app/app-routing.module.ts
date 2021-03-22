@@ -1,15 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { HeroesComponent } from "./components/heroes/heroes.component";
+import { ComicBooksComponent } from "./components/comic-books/comic-books.component";
 import { MainComponent } from "./components/main/main.component";
-import { VillainsComponent } from "./components/villains/villains.component";
+import { MoviesComponent } from "./components/movies/movies.component";
 
 const routes: Routes = [
     { path: '', component: MainComponent},
-    { path: 'heroes', component: HeroesComponent },
-    { path: 'villains', component: VillainsComponent },
+    { path: 'movies', component: MoviesComponent },
+    { path: 'comicBooks', component: ComicBooksComponent },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
