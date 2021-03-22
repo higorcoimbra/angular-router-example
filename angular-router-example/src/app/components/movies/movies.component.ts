@@ -11,7 +11,7 @@ export class MoviesComponent implements OnInit {
 
   movies: string[];
 
-  constructor(private marvelService: MarvelService,private route: ActivatedRoute) { }
+  constructor(private marvelService: MarvelService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const heroId = this.route.snapshot.paramMap.get('id');
