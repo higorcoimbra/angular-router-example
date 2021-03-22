@@ -26,11 +26,11 @@ export class MainComponent implements OnInit {
     this.heroesList = this.marvelService.searchHero(searchTerm);
   }
 
-  redirectToMovies(heroName: string) {
-    this.router.navigate([`movies/${heroName}`]);
+  redirectToMovies(heroId: number) {
+    this.router.navigate([`movies/${heroId}`]);
   }
   
-  redirectToComicBooks(heroName: string) {
-    this.router.navigate([`comicBooks/${heroName}`]);
+  redirectToComicBooks(heroId: number) {
+    this.router.navigate([`comicBooks/${heroId}`]);
   }
 }
