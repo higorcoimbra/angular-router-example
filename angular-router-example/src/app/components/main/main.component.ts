@@ -27,6 +27,10 @@ export class MainComponent implements OnInit {
   }
 
   redirectToMovies(heroId: number) {
+    /* 
+      aqui eu redireciono para uma página ou outra dependendo do link dentro, nesse caso 
+      eu chamei aquela movies/:id, tá vendo aonde entra o ":id"? (vide app-routing)
+    */
     this.router.navigate([`movies/${heroId}`]);
   }
   
